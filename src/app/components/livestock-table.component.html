@@ -1,0 +1,22 @@
+<table>
+  <thead>
+  <tr>
+    <th>RFID</th>
+    <th>Farm ID</th>
+    <th>Timestamp</th>
+    <th>Cow Temperature</th>
+    <th>Mastitis Diagnosis</th>
+    <th>Milk Yield</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let record of livestockRecords">
+    <td>{{ record.rfid }}</td>
+    <td>{{ record.farmId }}</td>
+    <td>{{ record.timestamp | date }}</td>
+    <td>{{ record.health.cowTemp }}</td>
+    <td>{{ record.health.mastitis ? 'Positive' : 'Negative' }}</td>
+    <td>{{ record.health.milkYield }}</td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,26 @@
+<div class="dashboard-container">
+    <h2>Farmer Dashboard</h2>
+
+    <form class="access-form">
+        <h3>Set Access Control</h3>
+        <input type="datetime-local" [(ngModel)]="accessTime" name="accessTime" />
+        <input type="text" [(ngModel)]="accessLocation" placeholder="Location" name="accessLocation" />
+        <select [(ngModel)]="accessRole" name="accessRole">
+            <option disabled selected>Select Role</option>
+            <option value="police">Police</option>
+            <option value="vet">Vet</option>
+            <option value="researcher">Researcher</option>
+        </select>
+    </form>
+
+    <div class="upload-section">
+        <h3>Upload Livestock CSV</h3>
+        <input type="file" (change)="onFileSelected($event)" />
+        <button (click)="uploadCSV()">Upload</button>
+
+        <div *ngIf="uploading" class="progress-wrapper">
+            <p>Uploading... {{ uploadProgress }}%</p>
+            <progress [value]="uploadProgress" max="100"></progress>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,95 @@
+.dashboard-container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 30px;
+    background: #1e1e2f;
+    color: #f8f8f2;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    animation: slideIn 0.6s ease-out;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h2, h3 {
+    text-align: center;
+    color: #61dafb;
+    margin-bottom: 20px;
+}
+
+input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #333348;
+    color: #ffffff;
+    font-size: 16px;
+    transition: box-shadow 0.3s;
+}
+
+input[type="password"]:focus {
+    box-shadow: 0 0 10px #61dafb;
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px;
+    background: #61dafb;
+    color: #1e1e2f;
+    font-weight: bold;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.3s;
+}
+
+button:hover {
+    background-color: #4fb3e5;
+    transform: translateY(-2px);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in;
+}
+
+table thead {
+    background-color: #333348;
+}
+
+table th, table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #444;
+}
+
+table tr:hover {
+    background-color: #2d2d44;
+    transition: background-color 0.3s;
+}
+
+/* Animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

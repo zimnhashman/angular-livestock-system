@@ -1,0 +1,27 @@
+<div class="dashboard-container">
+    <h2>Veterinarian Dashboard</h2>
+    <input type="password" [(ngModel)]="encryptionKey" placeholder="Enter Encryption Key">
+    <button (click)="requestAccess()">Authenticate</button>
+
+    <div *ngIf="accessGranted">
+        <h3>Authorized Livestock Records</h3>
+        <table>
+            <thead>
+            <tr>
+                <th>RFID</th>
+                <th>Cow Temp</th>
+                <th>Mastitis Diagnosis</th>
+                <th>Milk Yield</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let record of authorizedRecords">
+                <td>{{ record.rfid }}</td>
+                <td>{{ record.health.cowTemp }}</td>
+                <td>{{ record.health.mastitis ? 'Positive' : 'Negative' }}</td>
+                <td>{{ record.health.milkYield }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

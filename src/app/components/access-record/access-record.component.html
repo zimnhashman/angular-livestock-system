@@ -1,0 +1,22 @@
+<p>access-record works!</p>
+<div class="access-container">
+    <h2>Access Animal Record</h2>
+
+    <input type="text" placeholder="RFID" [(ngModel)]="rfid" />
+    <input type="text" placeholder="Encryption Key" [(ngModel)]="encryptionKey" />
+    <input type="text" placeholder="Your Role (Police, Vet...)" [(ngModel)]="role" />
+    <input type="text" placeholder="Your Private Key (Ganache)" [(ngModel)]="privateKey" />
+
+    <button (click)="accessRecord()">Access Record</button>
+
+    <div *ngIf="result">
+        <h3>Decrypted Data</h3>
+        <pre>{{ result.data }}</pre>
+        <p>✅ Tx Hash: {{ result.tx_hash }}</p>
+    </div>
+
+    <div *ngIf="error">
+        <h3 style="color: red">❌ Access Denied</h3>
+        <pre>{{ error.details }}</pre>
+    </div>
+</div>

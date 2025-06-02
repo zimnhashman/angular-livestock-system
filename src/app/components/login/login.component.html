@@ -1,0 +1,17 @@
+<div class="login-container">
+    <h2>Login</h2>
+
+    <select [(ngModel)]="role" class="role-select">
+        <option value="" disabled selected>Select role</option>
+        <option value="farmer">Farmer</option>
+        <option value="vet">Vet</option>
+        <option value="police">Police</option>
+        <option value="researcher">Researcher</option>
+    </select>
+
+    <div class="fade-in" *ngIf="requiresKey">
+        <input type="password" placeholder="Encryption Key" [(ngModel)]="encryptionKey" />
+    </div>
+
+    <button (click)="login()">Login</button>
+</div>
